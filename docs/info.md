@@ -1,20 +1,11 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+Three PWM channels share one counter that counts 0, 1, 2 and starts again, so one period is three clock ticks. A colour's output is high while the counter is below that colour's level. Level 3 is always on, and level 0 is off.
 
 ## How to test
 
-Explain how to use your project
+Hold rst_n low for a few clock cycles, then raise it. Set each colour's two input bits to a level from 0 to 3 and watch uo[0] to uo[2].
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+An RGB LED on uo[0], uo[1] and uo[2], with a resistor in series with each colour.
